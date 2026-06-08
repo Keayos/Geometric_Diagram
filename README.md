@@ -1,20 +1,13 @@
+# ReflectX 📐✨
 
-
-```markdown
- ReflectX 📐✨
-
-A sleek, interactive Computer Graphics application built with Python's `Turtle` and `Tkinter` libraries. **ReflectX** allows users to dynamically plot 2D polygons on a cartesian grid and perform fundamental geometric transformations, focusing on reflections across the **X-axis**, **Y-axis**, and the **Free-Axis ($y = x$)** using homogeneous coordinate transformation matrices.
-
-## Global Color Palette
-* Main Cyan Color: `#00ffff`
-* Main Red Color: `#ff4444`
-* Background Dark: `#2e2e2e`
+## Description
+ReflectX is an interactive 2D computer graphics tool built with Python to help visualize geometric reflections. Users can dynamically plot custom shapes on a cartesian grid and instantly reflect them across the X-Axis, Y-Axis, or the Free-Axis ($y = x$) using homogeneous coordinate transformation matrices. 
 
 ---
 
 ## Project Previews
 
-### 1. Shape Canvas Drawing
+### 1. Drawing a Shape
 ![Draw Shape](draw.png)
 
 ### 2. X-Axis Reflection
@@ -23,76 +16,51 @@ A sleek, interactive Computer Graphics application built with Python's `Turtle` 
 ### 3. Y-Axis Reflection
 ![Y-Axis Reflection](reflect%20y-axis.png)
 
-### 4. Free-Axis ($y = x$) Reflection
+### 4. Free-Axis (y = x) Reflection
 ![Free-Axis Reflection](reflect%20free-axis.png)
 
 ---
 
 ## Features
-
-* **Interactive Canvas:** Easily plot custom polygons by clicking directly on the graphical coordinate system grid.
-* **Auto Snap-to-Grid:** Built-in automatic grid alignment system (`Auto Snap`) ensuring coordinate precision by snapping vertex selections to the nearest grid intersection (25px scale increments).
-* **Advanced 2D Transformations:** Custom math engine utilizing **NumPy** for multi-dimensional matrix multiplications in homogeneous coordinates.
-* **Responsive Control Panel:** Built with an elegant dark theme using seamless integration between `tkinter` UI modules and `turtle` drawing canvases.
-* **Keyboard Shortcuts:** Built-in listeners for efficient execution mapping:
-  * `D`: Draw Shape
-  * `R`: Reflect Shape
-  * `C`: Clear Screen
+- **Click to Plot:** Left-click anywhere on the dark grid to place vertices.
+- **Auto Snap:** Automatically snaps points perfectly to the nearest grid intersection (25px scale increments).
+- **Matrix Engine:** Calculates real-time transformations using 3x3 homogeneous coordinate matrices.
+- **Keyboard Shortcuts:** Built-in listeners for rapid canvas control.
 
 ---
 
-## Matrix Transformation Engine
-
-ReflectX leverages **Homogeneous Coordinates** to encapsulate affine transformations into compact 3x3 matrices, enabling seamless linear algebraic transformations:
-
-### Reflection across X-Axis ($y = 0$)
-$$\begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} = \begin{bmatrix} 1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}$$
-
-### Reflection across Y-Axis ($x = 0$)
-$$\begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} = \begin{bmatrix} -1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}$$
-
-### Reflection across Free-Axis ($y = x$)
-$$\begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} = \begin{bmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}$$
-
----
-
-## Installation & Setup
-
-### Prerequisites
-Make sure you have **Python 3.x** installed on your system along with the required dependencies.
-
-### Dependencies
-Install the required packages using `pip`:
-```bash
-pip install numpy
-
-```
-
-*Note: `turtle` and `tkinter` are part of Python's standard library and do not require separate installation.*
-
-### Running the Application
-
-Clone this repository and run the script:
-
-```bash
-python CG_project.py
-
-```
+## Technologies Used
+* **Python 3.x**
+* **Turtle Graphics** (Canvas rendering)
+* **Tkinter** (Dark-themed user interface controls)
+* **NumPy** (Multi-dimensional matrix multiplication engine)
 
 ---
 
 ## How to Use
+1. **Add Points:** Left-click on the grid canvas to place dots, or click the **Add Point** button to enter exact coordinates manually.
+2. **Draw:** Press the **D** key or click the **Draw (D)** button to connect your points into a cyan shape.
+3. **Choose Mode:** Select your reflection line at the bottom control bar (**X-Axis**, **Y-Axis**, or **Free-Axis**).
+4. **Reflect:** Press the **R** key or click **Reflect (R)** to instantly view the calculated transformation in red.
+5. **Clear:** Press the **C** key or click **Clear (C)** to wipe the board and start fresh.
 
-1. **Plot Vertices:** Click anywhere on the dark grid area to add custom vertices, or click the **Add Point** button to manually enter exact values.
-2. **Form Polygon:** Press the `D` key or click the **Draw (D)** button to bind all plotted coordinate dots into a cyan-highlighted custom polygon.
-3. **Select Mode:** Choose a reflection target method under the **Reflection Mode** section (*Free-Axis*, *X-Axis*, or *Y-Axis*).
-4. **Transform:** Press the `R` key or click the **Reflect (R)** button to calculate and render the transformed geometry in vibrant red.
-5. **Reset:** Press `C` or click **Clear (C)** to refresh the board coordinates.
+---
+
+## Matrix Transformations
+ReflectX converts 2D coordinates into a homogeneous system to execute linear algebra operations:
+
+### X-Axis Reflection ($y = 0$)
+$$\begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} = \begin{bmatrix} 1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}$$
+
+### Y-Axis Reflection ($x = 0$)
+$$\begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} = \begin{bmatrix} -1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}$$
+
+### Free-Axis Reflection ($y = x$)
+$$\begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} = \begin{bmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}$$
 
 ---
 
 ## File Structure
-
 ```text
 ├── CG_project.py         # Main Python source application script
 ├── axes.ico              # Custom window application icon
@@ -100,15 +68,3 @@ python CG_project.py
 ├── reflect x-axis.png    # Interface preview graphic asset
 ├── reflect y-axis.png    # Interface preview graphic asset
 └── reflect free-axis.png # Interface preview graphic asset
-
-```
-
----
-
-## License
-
-This project is open-source and available under the **MIT License**. Feel free to use, modify, and distribute!
-
-```
-
-```
