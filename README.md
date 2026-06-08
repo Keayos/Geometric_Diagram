@@ -1,9 +1,7 @@
-Here is the updated `README.md` styled exactly like the **Leon Template** repository, complete with a clean header alignment, structured feature blocks, global color palette accents, and embedded preview screenshots.
 
-Replace everything currently in your `README.md` with this:
 
 ```markdown
-# ReflectX 📐✨
+ ReflectX 📐✨
 
 A sleek, interactive Computer Graphics application built with Python's `Turtle` and `Tkinter` libraries. **ReflectX** allows users to dynamically plot 2D polygons on a cartesian grid and perform fundamental geometric transformations, focusing on reflections across the **X-axis**, **Y-axis**, and the **Free-Axis ($y = x$)** using homogeneous coordinate transformation matrices.
 
